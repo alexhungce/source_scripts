@@ -1,7 +1,7 @@
 #!/bin/bash
 shopt -s -o nounset
 
-readonly UBUNTU=( trusty vivid wily xenial )
+readonly UBUNTU=( trusty vivid xenial )
 
 # assign default directories if there aren't any
 SOURCE_DIRECTORY=${1:-'src'}
