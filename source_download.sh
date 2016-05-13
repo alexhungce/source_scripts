@@ -2,6 +2,7 @@
 shopt -s -o nounset
 
 readonly UBUNTU=( xenial )
+readonly GITHUB_REPO=( fwdt uefi_plugfest system_scripts script-fwts lfdk1 )
 
 # assign default directories if there aren't any
 SOURCE_DIRECTORY=${1:-'src'}
@@ -13,9 +14,6 @@ cd $SOURCE_DIRECTORY
 
 # fwts
 git clone git://kernel.ubuntu.com/hwe/fwts.git 
-
-# fwdt
-git clone https://github.com/alexhungce/fwdt.git 
 
 # kernel source
 [ -e $KERNEL_DIRECTORY ] || mkdir $KERNEL_DIRECTORY
@@ -30,3 +28,8 @@ do
 	git clone git://kernel.ubuntu.com/ubuntu/ubuntu-$i.git
 done
 
+# source on github
+for i in "${GITHUB_REPO[@]}"
+do
+	git clone https://github.com/alexhungce/$i
+done
