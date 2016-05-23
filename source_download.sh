@@ -28,6 +28,8 @@ do
 	git clone git://kernel.ubuntu.com/ubuntu/ubuntu-$i.git
 done
 
+cd ..
+
 # source on github
 for i in "${GITHUB_REPO[@]}"
 do
