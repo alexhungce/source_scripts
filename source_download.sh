@@ -1,7 +1,7 @@
 #!/bin/bash
 shopt -s -o nounset
 
-readonly UBUNTU=( xenial )
+readonly UBUNTU=( xenial yakkety )
 readonly GITHUB_REPO=( fwdt uefi_plugfest system_scripts script-fwts lfdk1 )
 
 # assign default directories if there aren't any
