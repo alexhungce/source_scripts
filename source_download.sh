@@ -25,10 +25,8 @@ done
 [ -e $KERNEL_DIRECTORY ] || mkdir $KERNEL_DIRECTORY
 cd $KERNEL_DIRECTORY
 
-# mainline
 git clone git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux-2.6.git
 
-# ubuntu
 for i in "${UBUNTU[@]}"
 do
 	git clone git://kernel.ubuntu.com/ubuntu/ubuntu-$i.git
