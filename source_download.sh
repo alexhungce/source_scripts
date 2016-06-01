@@ -15,6 +15,12 @@ cd $SOURCE_DIRECTORY
 # fwts
 git clone git://kernel.ubuntu.com/hwe/fwts.git 
 
+# source on github
+for i in "${GITHUB_REPO[@]}"
+do
+	git clone https://github.com/alexhungce/$i
+done
+
 # kernel source
 [ -e $KERNEL_DIRECTORY ] || mkdir $KERNEL_DIRECTORY
 cd $KERNEL_DIRECTORY
@@ -28,10 +34,3 @@ do
 	git clone git://kernel.ubuntu.com/ubuntu/ubuntu-$i.git
 done
 
-cd ..
-
-# source on github
-for i in "${GITHUB_REPO[@]}"
-do
-	git clone https://github.com/alexhungce/$i
-done
