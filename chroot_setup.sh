@@ -1,7 +1,7 @@
 #!/bin/bash
 shopt -s -o nounset
 
-readonly UBUNTU=( trusty xenial )
+readonly UBUNTU=( trusty xenial yakkety )
 
 SOURCE_DIRECTORY=src
 
