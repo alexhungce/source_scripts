@@ -2,7 +2,7 @@
 shopt -s -o nounset
 
 readonly UBUNTU=( xenial zesty )
-readonly GITHUB_REPO=( fwdt uefi_plugfest system_scripts script-fwts lfdk1 )
+readonly GITHUB_REPO=( fwdt system_scripts script-fwts lfdk1 )
 
 # assign default directories if there aren't any
 SOURCE_DIRECTORY=${1:-'src'}
