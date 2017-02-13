@@ -32,3 +32,6 @@ do
 	git clone git://kernel.ubuntu.com/ubuntu/ubuntu-$i.git
 done
 
+# install required package for lfdk
+sudo apt-get -y install libncurses5-dev
+
