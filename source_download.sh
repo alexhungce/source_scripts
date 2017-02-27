@@ -35,3 +35,5 @@ done
 # install required package for lfdk
 sudo apt-get -y install libncurses5-dev
 
+#install required libraries for fwts
+sudo apt-get -y build-dep fwts
