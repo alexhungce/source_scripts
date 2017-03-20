@@ -11,12 +11,12 @@ cd $SOURCE_DIRECTORY
 # download kteam-tools
 git clone git://kernel.ubuntu.com/ubuntu/kteam-tools.git
 cd kteam-tools/chroot-setup
-sudo mkdir -p /usr3/chroots 
+sudo mkdir -p /usr3/chroots
 
 # ubuntu flavours
 for i in "${UBUNTU[@]}"
 do
-	sudo ./make_chroot $i amd64 
+	sudo ./make_chroot $i amd64
 done
 
 echo ""
