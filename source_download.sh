@@ -18,7 +18,7 @@ git clone git://kernel.ubuntu.com/hwe/fwts.git
 # source on github
 for i in "${GITHUB_REPO[@]}"
 do
-	git clone https://github.com/alexhungce/$i
+	[ -e $i ] || git clone https://github.com/alexhungce/$i
 done
 
 # kernel source
