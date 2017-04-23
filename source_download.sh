@@ -29,7 +29,7 @@ git clone git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux-2.6.git
 
 for i in "${UBUNTU[@]}"
 do
-	git clone git://kernel.ubuntu.com/ubuntu/ubuntu-$i.git
+	[ -e ubuntu-$i ] || git clone git://kernel.ubuntu.com/ubuntu/ubuntu-$i.git
 done
 
 # install required package for lfdk
