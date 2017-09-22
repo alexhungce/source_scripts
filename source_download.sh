@@ -15,6 +15,9 @@ cd $SOURCE_DIRECTORY
 # fwts
 [ -e fwts ] || git clone git://kernel.ubuntu.com/hwe/fwts.git
 
+# patchwork - pwclient
+[ -e patchwork ] || git clone git://github.com/getpatchwork/patchwork
+
 # source on github
 for i in "${GITHUB_REPO[@]}"
 do
@@ -31,6 +34,7 @@ for i in "${UBUNTU[@]}"
 do
 	[ -e ubuntu-$i ] || git clone git://kernel.ubuntu.com/ubuntu/ubuntu-$i.git
 done
+
 
 # install required package for lfdk
 sudo apt-get -y install libncurses5-dev
