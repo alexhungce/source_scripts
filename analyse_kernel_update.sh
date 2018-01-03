@@ -14,4 +14,7 @@ cat pull_history.${DATE} | grep 'efi\.[ch]' >> filter_history.${DATE}
 # input events
 cat pull_history.${DATE} | grep 'input-event-codes.h' >> filter_history.${DATE}
 
+# Documentation
+cat pull_history.${DATE} | grep 'kernel-parameters.txt' >> filter_history.${DATE}
+
 vi filter_history.${DATE}
