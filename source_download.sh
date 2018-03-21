@@ -28,7 +28,7 @@ done
 [ -e $KERNEL_DIRECTORY ] || mkdir $KERNEL_DIRECTORY
 cd $KERNEL_DIRECTORY
 
-[ -e linux-2.6 ] || git clone git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux-2.6.git
+[ -e linux ] || git clone git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux-2.6.git linux
 
 [ -e linux-oem ] || git clone git://git.launchpad.net/~canonical-kernel/ubuntu/+source/linux-oem oem-kernel
 
