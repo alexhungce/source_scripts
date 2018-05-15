@@ -1,7 +1,7 @@
 #!/bin/bash
 shopt -s -o nounset
 
-readonly UBUNTU=( xenial artful bionic )
+readonly UBUNTU=( xenial artful bionic cosmic )
 readonly GITHUB_REPO=( fwdt system_scripts script-fwts lfdk1 )
 
 # assign default directories if there aren't any
@@ -39,7 +39,10 @@ done
 
 
 # install required package for lfdk
-sudo apt-get -y install libncurses5-dev
+sudo apt -y install libncurses5-dev
 
 #install required libraries for fwts
-sudo apt-get -y build-dep fwts
+sudo apt -y build-dep fwts
+
+#install required packages for linux kernel
+sudo apt -y install git build-essential kernel-package fakeroot libncurses5-dev libssl-dev ccache
