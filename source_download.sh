@@ -34,7 +34,7 @@ cd $KERNEL_DIRECTORY
 
 for i in "${UBUNTU[@]}"
 do
-	[ -e ubuntu-$i ] || git clone git://kernel.ubuntu.com/ubuntu/ubuntu-$i.git
+	[ -e ubuntu-$i ] || git clone git://git.launchpad.net/~ubuntu-kernel/ubuntu/+source/linux/+git/$i
 done
 
 
