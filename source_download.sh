@@ -46,7 +46,7 @@ fi
 
 for i in "${UBUNTU[@]}"
 do
-	[ -e ubuntu-$i ] || git clone git://git.launchpad.net/~ubuntu-kernel/ubuntu/+source/linux/+git/$i
+	[ -e ubuntu-$i ] || git clone git://git.launchpad.net/~ubuntu-kernel/ubuntu/+source/linux/+git/$i ubuntu-$1
 done
 
 
