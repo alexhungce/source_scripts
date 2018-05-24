@@ -30,7 +30,19 @@ cd $KERNEL_DIRECTORY
 
 [ -e linux ] || git clone git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux-2.6.git linux
 
-[ -e linux-oem ] || git clone git://git.launchpad.net/~canonical-kernel/ubuntu/+source/linux-oem oem-kernel
+if [ ! -e oem-bionic ] ; then
+	if [ -d ubuntu-bionic ] ; then
+		cp -r ubuntu-bionic oem-bionic
+	else
+		git clone git://git.launchpad.net/~ubuntu-kernel/ubuntu/+source/linux/+git/bionic oem-bionic
+	fi
+	pushd .
+	cd oem-bionic
+	git remote add oem git://git.launchpad.net/~canonical-kernel/ubuntu/+source/linux-oem/+git/bionic
+	git fetch --all && git reset --hard oem/oem
+	popd
+
+fi
 
 for i in "${UBUNTU[@]}"
 do
