@@ -30,6 +30,11 @@ cd $KERNEL_DIRECTORY
 
 [ -e linux ] || git clone git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux-2.6.git linux
 
+for i in "${UBUNTU[@]}"
+do
+	[ -e ubuntu-$i ] || git clone git://git.launchpad.net/~ubuntu-kernel/ubuntu/+source/linux/+git/$i ubuntu-$i
+done
+
 if [ ! -e oem-bionic ] ; then
 	if [ -d ubuntu-bionic ] ; then
 		cp -r ubuntu-bionic oem-bionic
@@ -43,12 +48,6 @@ if [ ! -e oem-bionic ] ; then
 	popd
 
 fi
-
-for i in "${UBUNTU[@]}"
-do
-	[ -e ubuntu-$i ] || git clone git://git.launchpad.net/~ubuntu-kernel/ubuntu/+source/linux/+git/$i ubuntu-$i
-done
-
 
 # install required package for lfdk
 sudo apt -y install libncurses5-dev
