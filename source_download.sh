@@ -21,7 +21,7 @@ cd $SOURCE_DIRECTORY
 # source on github
 for i in "${GITHUB_REPO[@]}"
 do
-	[ -e $i ] || git clone https://github.com/alexhungce/$i
+	[ -e $i ] || git clone https://github.com/alexhungce/$i.git
 done
 
 # kernel source
