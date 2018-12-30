@@ -19,5 +19,6 @@ do
 	sudo ./make_chroot $i amd64
 done
 
+sudo usermod -aG sbuild $USER
 echo ""
-echo "== add username to the sbuild in \"/etc/group\" and reboot =="
+echo "== username added to the sbuild in \"/etc/group\". Please reboot =="
