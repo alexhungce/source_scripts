@@ -55,5 +55,8 @@ sudo apt -y install libncurses5-dev
 #install required libraries for fwts
 sudo apt -y build-dep fwts
 
+#install required libraries for bios-requirement
+sudo apt -y install fop gawk
+
 #install required packages for linux kernel
 sudo apt -y install git build-essential kernel-package fakeroot libncurses5-dev libssl-dev ccache
