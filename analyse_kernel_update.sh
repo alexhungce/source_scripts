@@ -1,23 +1,31 @@
 #!/bin/sh
 
 DATE=`date +%F`
+
+CUR_TAG=$(git describe --tag)
 git pull >> pull_history.${DATE}
+NEW_TAG=$(git describe --tag)
 
 # acpi
-cat pull_history.${DATE} | grep 'drivers\/acpi' >> filter_history.${DATE}
-cat pull_history.${DATE} | grep 'drivers\/platform\/x86\/' | grep -E 'asus|hp|dell|intel|thinkpad' >> filter_history.${DATE}
-cat pull_history.${DATE} | grep 'drivers\/input\/misc\/soc_button_array.c' >> filter_history.${DATE}
+git show $CUR_TAG..$NEW_TAG -- drivers/acpi >> filter_history.${DATE}
+
+# platform drivers
+git show $CUR_TAG..$NEW_TAG -- drivers/platform/x86/dell* >> filter_history.${DATE}
+git show $CUR_TAG..$NEW_TAG -- drivers/platform/x86/hp* >> filter_history.${DATE}
+git show $CUR_TAG..$NEW_TAG -- drivers/platform/x86/intel* >> filter_history.${DATE}
+git show $CUR_TAG..$NEW_TAG -- drivers/platform/x86/thinkpad_acpi.c >> filter_history.${DATE}
+git show $CUR_TAG..$NEW_TAG -- drivers/input/misc/soc_button_array.c >> filter_history.${DATE}
 
 # suspend
-cat pull_history.${DATE} | grep 'suspend\.[ch]' >> filter_history.${DATE}
+git show $CUR_TAG..$NEW_TAG -- *suspend.* >> filter_history.${DATE}
 
 # efi
-cat pull_history.${DATE} | grep 'efi\.[ch]' >> filter_history.${DATE}
+git show $CUR_TAG..$NEW_TAG -- *efi.* >> filter_history.${DATE}
 
-# input events
-cat pull_history.${DATE} | grep 'input-event-codes.h' >> filter_history.${DATE}
+# keymap
+git show $CUR_TAG..$NEW_TAG -- include/uapi/linux/input-event-codes.h >> filter_history.${DATE}
 
 # Documentation
-cat pull_history.${DATE} | grep 'kernel-parameters.txt' >> filter_history.${DATE}
+git show $CUR_TAG..$NEW_TAG -- Documentation/admin-guide/kernel-parameters.txt >> filter_history.${DATE}
 
 vi filter_history.${DATE}
