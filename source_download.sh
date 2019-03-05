@@ -15,6 +15,9 @@ cd $SOURCE_DIRECTORY
 # fwts
 [ -e fwts ] || git clone git://kernel.ubuntu.com/hwe/fwts.git
 
+# acpica
+[ -e acpica ] || git clone git://github.com/acpica/acpica
+
 # patchwork - pwclient
 [ -e patchwork ] || git clone git://github.com/getpatchwork/patchwork
 
