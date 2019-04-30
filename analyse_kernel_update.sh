@@ -13,6 +13,7 @@ readonly DRIVERS=( drivers/acpi
 		   *efi.*
 		   include/uapi/linux/input-event-codes.h
 		   Documentation/admin-guide/kernel-parameters.txt
+		   drivers/firmware/dmi_scan.c
 		 )
 
 CUR_TAG=$(git describe --tag)
