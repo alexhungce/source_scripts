@@ -50,6 +50,17 @@ if [ ! -e oem-bionic ] ; then
 	git fetch --all && git reset --hard oem/oem
 	popd
 
+	# OEM SP1
+	if [ -d ubuntu-bionic ] ; then
+		cp -r ubuntu-bionic oem-bionic-sp1
+	else
+		git clone git://git.launchpad.net/~ubuntu-kernel/ubuntu/+source/linux/+git/bionic oem-bionic-sp1
+	fi
+	pushd .
+	cd oem-bionic-sp1
+	git remote add oem git://git.launchpad.net/~canonical-kernel/ubuntu/+source/linux-oem-osp1/+git/bionic
+	git fetch --all && git reset --hard oem/oem
+	popd
 fi
 
 # install required package for lfdk
