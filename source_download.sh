@@ -49,8 +49,10 @@ if [ ! -e oem-bionic ] ; then
 	git remote add oem git://git.launchpad.net/~canonical-kernel/ubuntu/+source/linux-oem/+git/bionic
 	git fetch --all && git reset --hard oem/oem
 	popd
+fi
 
-	# OEM SP1
+# OEM SP1
+if [ ! -e oem-bionic-sp1 ] ; then
 	if [ -d ubuntu-bionic ] ; then
 		cp -r ubuntu-bionic oem-bionic-sp1
 	else
