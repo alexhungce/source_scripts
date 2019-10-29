@@ -1,7 +1,7 @@
 #!/bin/bash
 shopt -s -o nounset
 
-readonly UBUNTU=( bionic eoan )
+readonly UBUNTU=( bionic focal )
 readonly GITHUB_REPO=( fwdt system_scripts script-fwts lfdk1 hwe_daily )
 
 # assign default directories if there aren't any
