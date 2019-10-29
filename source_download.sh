@@ -35,14 +35,14 @@ cd $KERNEL_DIRECTORY
 
 for i in "${UBUNTU[@]}"
 do
-	[ -e ubuntu-$i ] || git clone git://git.launchpad.net/~ubuntu-kernel/ubuntu/+source/linux/+git/$i ubuntu-$i
+	[ -e ubuntu-$i ] || git clone git://kernel.ubuntu.com/ubuntu/ubuntu-$i.git
 done
 
 if [ ! -e oem-bionic ] ; then
 	if [ -d ubuntu-bionic ] ; then
 		cp -r ubuntu-bionic oem-bionic
 	else
-		git clone git://git.launchpad.net/~ubuntu-kernel/ubuntu/+source/linux/+git/bionic oem-bionic
+		git clone git://kernel.ubuntu.com/ubuntu/ubuntu-bionic.git oem-bionic
 	fi
 	pushd .
 	cd oem-bionic
@@ -56,7 +56,7 @@ if [ ! -e oem-bionic-sp1 ] ; then
 	if [ -d ubuntu-bionic ] ; then
 		cp -r ubuntu-bionic oem-bionic-sp1
 	else
-		git clone git://git.launchpad.net/~ubuntu-kernel/ubuntu/+source/linux/+git/bionic oem-bionic-sp1
+		git clone git://kernel.ubuntu.com/ubuntu/ubuntu-bionic.git oem-bionic-sp1
 	fi
 	pushd .
 	cd oem-bionic-sp1
