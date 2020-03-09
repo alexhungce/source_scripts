@@ -72,7 +72,7 @@ sudo apt -y install libncurses5-dev
 sudo apt -y build-dep fwts
 
 #install required libraries for bios-requirement
-sudo apt -y install fop gawk
+sudo apt -y install fop gawk qpdf
 
 #install required packages for linux kernel
 sudo apt -y install git build-essential kernel-package fakeroot libncurses5-dev libssl-dev ccache
