@@ -1,7 +1,7 @@
 #!/bin/bash
 shopt -s -o nounset
 
-readonly UBUNTU=( bionic focal groovy )
+readonly UBUNTU=( focal groovy )
 readonly GITHUB_REPO=( fwdt system_scripts script-fwts lfdk1 hwe_daily debug_scripts )
 
 # assign default directories if there aren't any
@@ -37,20 +37,6 @@ for i in "${UBUNTU[@]}"
 do
 	[ -e ubuntu-$i ] || git clone git://kernel.ubuntu.com/ubuntu/ubuntu-$i.git
 done
-
-# OEM SP1
-if [ ! -e oem-bionic-sp1 ] ; then
-	if [ -d ubuntu-bionic ] ; then
-		cp -r ubuntu-bionic oem-bionic-sp1
-	else
-		git clone git://kernel.ubuntu.com/ubuntu/ubuntu-bionic.git oem-bionic-sp1
-	fi
-	pushd .
-	cd oem-bionic-sp1
-	git remote add oem git://git.launchpad.net/~canonical-kernel/ubuntu/+source/linux-oem-osp1/+git/bionic
-	git fetch --all && git reset --hard oem/oem
-	popd
-fi
 
 # OEM-5.6
 if [ ! -e oem-5.6 ] ; then
