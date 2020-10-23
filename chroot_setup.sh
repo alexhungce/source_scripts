@@ -1,7 +1,7 @@
 #!/bin/bash
 shopt -s -o nounset
 
-readonly UBUNTU=( bionic focal )
+readonly UBUNTU=( focal groovy )
 
 SOURCE_DIRECTORY=src
 
