@@ -15,6 +15,7 @@ readonly DRIVERS=( drivers/acpi
 		   Documentation/admin-guide/kernel-parameters.txt
 		   drivers/firmware/dmi_scan.c
 		   drivers/pci/quirks.c
+		   drivers/input/mouse/elantech.c
 		 )
 
 CUR_TAG=$(git describe --tag)
