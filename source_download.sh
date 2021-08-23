@@ -52,6 +52,20 @@ if [ ! -e oem-5.13 ] ; then
 	popd
 fi
 
+# OEM-5.14
+if [ ! -e oem-5.14 ] ; then
+	if [ -d ubuntu-focal ] ; then
+		cp -r ubuntu-focal oem-5.14
+	else
+		git clone git://kernel.ubuntu.com/ubuntu/ubuntu-focal.git oem-5.14
+	fi
+	pushd .
+	cd oem-5.14
+	git remote add oem https://git.launchpad.net/~canonical-kernel/ubuntu/+source/linux-oem/+git/focal/
+	git fetch --all && git reset --hard oem/oem-5.14-next
+	popd
+fi
+
 # install required package for lfdk
 sudo apt -y install libncurses5-dev
 
