@@ -1,7 +1,7 @@
 #!/bin/bash
 shopt -s -o nounset
 
-readonly UBUNTU=( focal hirsute )
+readonly UBUNTU=( impish jammy )
 
 SOURCE_DIRECTORY=src
 
