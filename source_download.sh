@@ -1,7 +1,7 @@
 #!/bin/bash
 shopt -s -o nounset
 
-readonly UBUNTU=( focal impish )
+readonly UBUNTU=( focal impish jammy )
 readonly GITHUB_REPO=( fwdt system_scripts script-fwts lfdk1 hwe_daily debug_scripts )
 
 # assign default directories if there aren't any
