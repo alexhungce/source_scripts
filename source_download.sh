@@ -1,7 +1,7 @@
 #!/bin/bash
 shopt -s -o nounset
 
-readonly UBUNTU=( focal impish jammy )
+readonly UBUNTU=( focal jammy )
 readonly GITHUB_REPO=( fwdt system_scripts script-fwts lfdk1 hwe_daily debug_scripts )
 
 # assign default directories if there aren't any
@@ -37,20 +37,6 @@ for i in "${UBUNTU[@]}"
 do
 	[ -e ubuntu-$i ] || git clone git://kernel.ubuntu.com/ubuntu/ubuntu-$i.git
 done
-
-# OEM-5.13
-if [ ! -e oem-5.13 ] ; then
-	if [ -d ubuntu-focal ] ; then
-		cp -r ubuntu-focal oem-5.13
-	else
-		git clone git://kernel.ubuntu.com/ubuntu/ubuntu-focal.git oem-5.13
-	fi
-	pushd .
-	cd oem-5.13
-	git remote add oem https://git.launchpad.net/~canonical-kernel/ubuntu/+source/linux-oem/+git/focal/
-	git fetch --all && git reset --hard oem/oem-5.13-next
-	popd
-fi
 
 # OEM-5.14
 if [ ! -e oem-5.14 ] ; then
