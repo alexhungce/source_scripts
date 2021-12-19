@@ -62,4 +62,4 @@ sudo apt -y build-dep fwts
 sudo apt -y install fop gawk qpdf python3-lxml
 
 #install required packages for linux kernel
-sudo apt -y install git build-essential kernel-package fakeroot libncurses5-dev libssl-dev ccache
+sudo apt -y install git build-essential fakeroot libncurses5-dev libssl-dev ccache
