@@ -33,6 +33,8 @@ cd $KERNEL_DIRECTORY
 
 [ -e linux ] || git clone git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux-2.6.git linux
 
+[ -e amdgpu ] || git clone https://gitlab.freedesktop.org/agd5f/linux.git amdgpu
+
 for i in "${UBUNTU[@]}"
 do
 	[ -e ubuntu-$i ] || git clone git://kernel.ubuntu.com/ubuntu/ubuntu-$i.git
