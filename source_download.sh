@@ -18,11 +18,15 @@ cd $SOURCE_DIRECTORY
 # acpica
 [ -e acpica ] || git clone git://github.com/acpica/acpica
 
-# igt-gpu-tools
-[ -e igt-gpu-tools ] || git clone git@gitlab.freedesktop.org:drm/igt-gpu-tools.git
-
 # patchwork - pwclient
 [ -e patchwork ] || git clone git://github.com/getpatchwork/patchwork
+
+# gpu-related sources
+[ -e drm-tests ] || git clone https://chromium.googlesource.com/chromiumos/platform/drm-tests
+[ -e igt-gpu-tools ] || git clone git@gitlab.freedesktop.org:drm/igt-gpu-tools.git
+[ -e gpuvis ] || git clone git://github.com/mikesart/gpuvis.git
+[ -e VRRTest ] || git clone git://github.com/Nixola/VRRTest.git
+[ -e libdrm ] || git clone https://gitlab.freedesktop.org/mesa/drm libdrm
 
 # source on github
 for i in "${GITHUB_REPO[@]}"
