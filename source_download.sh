@@ -18,6 +18,9 @@ cd $SOURCE_DIRECTORY
 # acpica
 [ -e acpica ] || git clone git://github.com/acpica/acpica
 
+# igt-gpu-tools
+[ -e igt-gpu-tools ] || git clone git@gitlab.freedesktop.org:drm/igt-gpu-tools.git
+
 # patchwork - pwclient
 [ -e patchwork ] || git clone git://github.com/getpatchwork/patchwork
 
