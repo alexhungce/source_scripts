@@ -44,14 +44,8 @@ do
 	[ -e ubuntu-$i ] || git clone git clone https://git.launchpad.net/~ubuntu-kernel/ubuntu/+source/linux/+git/$i ubuntu-$i
 done
 
-# install required package for lfdk
-sudo apt -y install libncurses5-dev
-
 #install required libraries for fwts
 sudo apt -y build-dep fwts
-
-#install required libraries for bios-requirement
-sudo apt -y install fop gawk qpdf python3-lxml
 
 #install required packages for linux kernel
 sudo apt -y install git build-essential fakeroot libncurses5-dev libssl-dev ccache
