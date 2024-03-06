@@ -27,6 +27,7 @@ cd $SOURCE_DIRECTORY
 [ -e gpuvis ] || git clone git://github.com/mikesart/gpuvis.git
 [ -e VRRTest ] || git clone git://github.com/Nixola/VRRTest.git
 [ -e libdrm ] || git clone https://gitlab.freedesktop.org/mesa/drm libdrm
+[ -e mesa ] || git clone https://gitlab.freedesktop.org/mesa/mesa.git mesa
 
 # source on github
 for i in "${GITHUB_REPO[@]}"
