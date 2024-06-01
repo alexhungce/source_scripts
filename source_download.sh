@@ -52,4 +52,4 @@ done
 sudo apt -y build-dep fwts
 
 #install required packages for linux kernel
-sudo apt -y install git build-essential fakeroot libncurses5-dev libssl-dev ccache
+sudo apt -y install git build-essential fakeroot libncurses5-dev libssl-dev ccache libelf-dev
