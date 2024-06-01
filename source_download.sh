@@ -16,23 +16,23 @@ cd $SOURCE_DIRECTORY
 [ -e fwts ] || git clone https://git.launchpad.net/~firmware-testing-team/fwts/+git/fwts
 
 # acpica
-[ -e acpica ] || git clone git://github.com/acpica/acpica
+[ -e acpica ] || git clone https://github.com/acpica/acpica
 
 # patchwork - pwclient
-[ -e patchwork ] || git clone git://github.com/getpatchwork/patchwork
+[ -e patchwork ] || git clone https://github.com/getpatchwork/patchwork
 
 # gpu-related sources
 [ -e drm-tests ] || git clone https://chromium.googlesource.com/chromiumos/platform/drm-tests
 [ -e igt-gpu-tools ] || git clone git@gitlab.freedesktop.org:drm/igt-gpu-tools.git
-[ -e gpuvis ] || git clone git://github.com/mikesart/gpuvis.git
-[ -e VRRTest ] || git clone git://github.com/Nixola/VRRTest.git
+[ -e gpuvis ] || git clone https://github.com/mikesart/gpuvis.git
+[ -e VRRTest ] || git clone https://github.com/Nixola/VRRTest.git
 [ -e libdrm ] || git clone https://gitlab.freedesktop.org/mesa/drm libdrm
 [ -e mesa ] || git clone https://gitlab.freedesktop.org/mesa/mesa.git mesa
 
 # source on github
 for i in "${GITHUB_REPO[@]}"
 do
-	[ -e $i ] || git clone git://github.com/alexhungce/$i.git
+	[ -e $i ] || git clone https://github.com/alexhungce/$i.git
 done
 
 # kernel source
