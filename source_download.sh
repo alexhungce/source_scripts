@@ -1,7 +1,7 @@
 #!/bin/bash
 shopt -s -o nounset
 
-readonly UBUNTU=( jammy noble )
+readonly UBUNTU=( noble )
 readonly GITHUB_REPO=( fwdt system_scripts script-fwts lfdk1 hwe_daily debug_scripts )
 
 # assign default directories if there aren't any
@@ -45,8 +45,7 @@ cd $KERNEL_DIRECTORY
 
 for i in "${UBUNTU[@]}"
 do
-	[ -e ubuntu-$i ] || git clone git://kernel.ubuntu.com/ubuntu/ubuntu-$i.git
-	[ -e ubuntu-$i ] || git clone git clone https://git.launchpad.net/~ubuntu-kernel/ubuntu/+source/linux/+git/$i ubuntu-$i
+	[ -e ubuntu-$i ] || git clone https://git.launchpad.net/~ubuntu-kernel/ubuntu/+source/linux/+git/$i ubuntu-$i
 done
 
 #install required libraries for fwts
