@@ -13,7 +13,7 @@ cd $HOME
 cd $SOURCE_DIRECTORY
 
 # fwts
-[ -e fwts ] || git clone https://git.launchpad.net/~firmware-testing-team/fwts/+git/fwts
+[ -e fwts ] || git clone https://github.com/fwts/fwts.git
 
 # acpica
 [ -e acpica ] || git clone https://github.com/acpica/acpica
