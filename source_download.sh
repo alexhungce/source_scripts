@@ -41,7 +41,7 @@ cd $KERNEL_DIRECTORY
 
 [ -e linux ] || git clone git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux-2.6.git linux
 [ -e linux-stable ] || git clone git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git linux-stable
-[ -e amdgpu ] || git clone https://gitlab.freedesktop.org/agd5f/linux.git amdgpu
+[ -e amdgpu ] || git clone git@gitlab.freedesktop.org:agd5f/linux.git amdgpu
 
 for i in "${UBUNTU[@]}"
 do
