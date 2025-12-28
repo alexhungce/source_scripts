@@ -40,8 +40,8 @@ popd
 
 # kernel source
 [ -e $KERNEL_DIRECTORY ] || mkdir $KERNEL_DIRECTORY
-cd $KERNEL_DIRECTORY
 
+pushd $KERNEL_DIRECTORY
 [ -e linux ] || git clone git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux-2.6.git linux
 [ -e linux-stable ] || git clone git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git linux-stable
 [ -e amdgpu ] || git clone git@gitlab.freedesktop.org:agd5f/linux.git amdgpu
@@ -50,4 +50,4 @@ for i in "${UBUNTU[@]}"
 do
 	[ -e ubuntu-$i ] || git clone https://git.launchpad.net/~ubuntu-kernel/ubuntu/+source/linux/+git/$i ubuntu-$i
 done
-
+popd
