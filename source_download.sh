@@ -2,7 +2,7 @@
 shopt -s -o nounset
 
 readonly UBUNTU=( )
-readonly GITHUB_REPO=( fwdt system_scripts script-fwts lfdk1 hwe_daily debug_scripts )
+readonly GITHUB_REPO=( scripts system_scripts )
 
 # assign default directories if there aren't any
 SOURCE_DIRECTORY=${1:-'src'}
