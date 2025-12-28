@@ -19,9 +19,6 @@ cd $SOURCE_DIRECTORY
 # acpica
 [ -e acpica ] || git clone https://github.com/acpica/acpica
 
-# patchwork - pwclient
-[ -e patchwork ] || git clone https://github.com/getpatchwork/patchwork
-
 # gpu-related sources
 [ -e drm-tests ] || git clone https://chromium.googlesource.com/chromiumos/platform/drm-tests
 [ -e igt-gpu-tools ] || git clone git@gitlab.freedesktop.org:drm/igt-gpu-tools.git
