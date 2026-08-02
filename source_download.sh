@@ -14,19 +14,31 @@ while [[ $# -gt 0 ]]; do
 		--all)    DO_ALL=1 ;;
 		--) shift; break ;;
 		-*) echo "Unknown option: $1" >&2; exit 1 ;;
-		*) break ;;
+		*) echo "Unexpected argument: $1" >&2; exit 1 ;;
 	esac
 	shift
 done
 
-# assign default directories if there aren't any
-SOURCE_DIRECTORY=${1:-'src'}
-KERNEL_DIRECTORY=${2:-'kernel'}
+# assign default directories
+DEVELOP_DIRECTORY='develop'
+SOURCE_DIRECTORY='src'   # symlink name kept for backward compatibility
+KERNEL_DIRECTORY='kernel'
 PERSONAL_DIRECTORY='personal'
 
 cd "$HOME"
-[[ -e "$SOURCE_DIRECTORY" ]] || mkdir "$SOURCE_DIRECTORY"
-cd "$SOURCE_DIRECTORY"
+
+# migrate an existing real source directory to the develop directory
+if [[ -e "$SOURCE_DIRECTORY" && ! -L "$SOURCE_DIRECTORY" && ! -e "$DEVELOP_DIRECTORY" ]]; then
+	mv "$SOURCE_DIRECTORY" "$DEVELOP_DIRECTORY"
+fi
+
+# ensure the real source directory exists
+[[ -e "$DEVELOP_DIRECTORY" ]] || mkdir "$DEVELOP_DIRECTORY"
+
+# expose "$SOURCE_DIRECTORY" as a symlink to the develop directory
+[[ -e "$SOURCE_DIRECTORY" || -L "$SOURCE_DIRECTORY" ]] || ln -s "$DEVELOP_DIRECTORY" "$SOURCE_DIRECTORY"
+
+cd "$DEVELOP_DIRECTORY"
 
 # optional sources (all: fwts, acpica, gpu-related)
 if [[ "$DO_ALL" -eq 1 ]]; then
